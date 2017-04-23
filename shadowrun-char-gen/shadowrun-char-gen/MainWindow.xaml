@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:shadowrun_char_gen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="340" Width="525">
+        Title="MainWindow" Height="340" Width="500">
     <Grid>
-        
+        <Label>this is new</Label>
     </Grid>
 </Window>
