@@ -24,5 +24,18 @@ namespace shadowrun_char_gen
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            NewCharPriorities prioritiyWindow = new NewCharPriorities();
+            prioritiyWindow.ShowInTaskbar = false;
+            prioritiyWindow.Owner = this;
+
+            if (prioritiyWindow.ShowDialog() == true) {
+                textBlockReturnValue.Text = prioritiyWindow.Priorities[0].Text;
+            }
+
+            prioritiyWindow.Close();
+        }
     }
 }

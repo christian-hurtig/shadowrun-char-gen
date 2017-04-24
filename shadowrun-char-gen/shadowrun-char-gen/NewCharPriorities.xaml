@@ -1,0 +1,31 @@
+﻿<Window x:Class="shadowrun_char_gen.NewCharPriorities"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shadowrun_char_gen"
+        mc:Ignorable="d"
+        Title="NewCharPriorities" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListView Name="listViewSelectPriorities" AllowDrop="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="index" DisplayMemberBinding="{Binding Index}"/>
+                    <GridViewColumn Header="something" DisplayMemberBinding="{Binding Text}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button IsCancel="True" Click="Button_Click_Cancel">Cancel</Button>
+            <Button IsDefault="True" Click="Button_Click_OK">OK</Button>
+        </StackPanel>
+    </Grid>
+</Window>
