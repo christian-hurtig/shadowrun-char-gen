@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace shadowrun_char_gen
 {
@@ -35,6 +36,7 @@ namespace shadowrun_char_gen
             Priorities.Add(new PriorityItem('E', "Resources"));
 
             listViewPriority.ItemsSource = Priorities;
+            Priorities.CollectionChanged += PrioritiesCollectionChanged;
 
             RaceList.Add(new Race("Dwarf", 8, 6, 5, 8, 7, 6, 6, 6, 7, 6, 6));
             RaceList.Add(new Race("Elf", 6, 7, 6, 6, 6, 6, 6, 8, 6, 6, 6));
@@ -42,10 +44,17 @@ namespace shadowrun_char_gen
             RaceList.Add(new Race("Ork", 9, 6, 6, 8, 6, 5, 6, 5, 6, 6, 6));
             RaceList.Add(new Race("Troll", 10, 5, 6, 10, 6, 5, 5, 4, 6, 6, 6));
 
-            comboBoxRace.ItemsSource = RaceList;
+            listBoxRace.ItemsSource = RaceList;
         }
-        
-                
+
+        private void PrioritiesCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
+            int i = 'A';
+            
+                foreach (PriorityItem p in Priorities) { 
+                    p.Index = (char)i;
+                    i++;
+                }
+        }
         private void Button_Click_OK(object sender, RoutedEventArgs e) {
             DialogResult = true;
         }

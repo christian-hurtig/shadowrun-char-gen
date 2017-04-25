@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:shadowrun_char_gen"
         mc:Ignorable="d"
-        Title="NewCharPriorities" Height="300" Width="300">
+        Title="NewCharPriorities" Height="480" Width="640">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -23,7 +23,7 @@
                         <WrapPanel>
                             <Button Name="upButtonPriority" Click="upButtonPriority_Click">Up</Button>
                             <Button Name="downButtonPriority" Click="downButtonPriority_Click">Down</Button>
-                            <TextBlock Name="textIndexPriority" Text="{Binding Index}" FontWeight="Bold" />
+                            <TextBlock Name="textIndexPriority" Text="{Binding Index, Mode=TwoWay}" FontWeight="Bold" />
                             <TextBlock Name="textTextPriority" Text="{Binding Text}" FontWeight="Bold" />
                         </WrapPanel>
                     </DataTemplate>
@@ -32,9 +32,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ComboBox Name="comboBoxRace" >
-                <TextBlock Text="{Binding Name}"/>
-            </ComboBox>
+            <ListBox Name="listBoxRace" DisplayMemberPath="Name"/>
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">

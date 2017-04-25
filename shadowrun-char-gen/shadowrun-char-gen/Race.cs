@@ -8,7 +8,7 @@ namespace shadowrun_char_gen
 {
     public class Race
     {
-        string Name { get; }
+        public string Name { get; private set; }
         int BodyMax;
         int AgilityMax;
         int ReactionMax;
