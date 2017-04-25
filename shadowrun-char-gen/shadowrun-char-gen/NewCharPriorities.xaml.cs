@@ -65,7 +65,13 @@ namespace shadowrun_char_gen
 
         private void upButtonPriority_Click(object sender, RoutedEventArgs e) {;
             PriorityItem p = (PriorityItem)((Button)sender).DataContext;
-            int listIndex = Priorities.IndexOf(p);
+            int listIndex;
+
+            if(p == null) {
+                return;
+            }
+
+            listIndex = Priorities.IndexOf(p);
             if(listIndex > 0) {
                 Priorities.Move(listIndex, listIndex - 1);
             }
@@ -73,10 +79,27 @@ namespace shadowrun_char_gen
 
         private void downButtonPriority_Click(object sender, RoutedEventArgs e) {
             PriorityItem p = (PriorityItem)((Button)sender).DataContext;
-            int listIndex = Priorities.IndexOf(p);
+            int listIndex;
+
+            if (p == null) {
+                return;
+            }
+
+            listIndex = Priorities.IndexOf(p);
             if (listIndex < Priorities.Count-1) {
                 Priorities.Move(listIndex, listIndex + 1);
             }
+        }
+
+        private void listBoxRace_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            Race r = (Race)((ListBox)sender).SelectedItem;
+
+            if(r == null) {
+                return;
+            }
+            
+            //do stuff with list display.
+
         }
     }
 }

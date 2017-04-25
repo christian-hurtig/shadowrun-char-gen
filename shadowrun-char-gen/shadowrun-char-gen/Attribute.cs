@@ -9,7 +9,7 @@ namespace shadowrun_char_gen
     class Attribute
     {
         public int Value { get; private set; }
-        public int Maximum;
+        public int Maximum { get; private set; }
 
         public Attribute(int maximum)
         {

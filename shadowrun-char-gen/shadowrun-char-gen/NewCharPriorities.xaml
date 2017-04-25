@@ -12,6 +12,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -32,10 +33,16 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ListBox Name="listBoxRace" DisplayMemberPath="Name"/>
+            <ListBox Name="listBoxRace" DisplayMemberPath="Name" SelectionChanged="listBoxRace_SelectionChanged"/>
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <Grid Grid.Row="2">
+            <Label>
+                T
+            </Label>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
             <Button IsCancel="True" Click="Button_Click_Cancel">Cancel</Button>
             <Button IsDefault="True" Click="Button_Click_OK">OK</Button>
         </StackPanel>
