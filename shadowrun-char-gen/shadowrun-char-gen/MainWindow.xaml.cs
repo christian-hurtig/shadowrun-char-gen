@@ -25,7 +25,7 @@ namespace shadowrun_char_gen
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_New(object sender, RoutedEventArgs e)
         {
             NewCharPriorities prioritiyWindow = new NewCharPriorities();
             prioritiyWindow.ShowInTaskbar = false;

@@ -16,9 +16,9 @@
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New" Click="MenuItem_Click" />
+                    <MenuItem Header="_New" Click="MenuItem_New" />
                     <MenuItem Header="_Open" />
-                    <MenuItem Header="_Save" />
+                    <MenuItem Command="Save" Header="_Save" />
                     <Separator />
                     <MenuItem Header="_Exit" />
                 </MenuItem>

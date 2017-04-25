@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace shadowrun_char_gen
 {
@@ -20,33 +21,53 @@ namespace shadowrun_char_gen
     public partial class NewCharPriorities : Window
     {
 
-        public List<PriorityItem> Priorities { get; private set; } = new List<PriorityItem>();
+        public ObservableCollection<PriorityItem> Priorities { get; private set; } = new ObservableCollection<PriorityItem>();
+        public List<Race> RaceList = new List<Race>();
         
         public NewCharPriorities()
         {
-            InitializeComponent();
+            InitializeComponent();       
+
             Priorities.Add(new PriorityItem('A', "Metatype"));
             Priorities.Add(new PriorityItem('B', "Attribute"));
             Priorities.Add(new PriorityItem('C', "Magic"));
             Priorities.Add(new PriorityItem('D', "Skills"));
             Priorities.Add(new PriorityItem('E', "Resources"));
 
-            listViewSelectPriorities.ItemsSource = Priorities;
+            listViewPriority.ItemsSource = Priorities;
+
+            RaceList.Add(new Race("Dwarf", 8, 6, 5, 8, 7, 6, 6, 6, 7, 6, 6));
+            RaceList.Add(new Race("Elf", 6, 7, 6, 6, 6, 6, 6, 8, 6, 6, 6));
+            RaceList.Add(new Race("Human", 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6));
+            RaceList.Add(new Race("Ork", 9, 6, 6, 8, 6, 5, 6, 5, 6, 6, 6));
+            RaceList.Add(new Race("Troll", 10, 5, 6, 10, 6, 5, 5, 4, 6, 6, 6));
+
+            comboBoxRace.ItemsSource = RaceList;
         }
-
-        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_OK(object sender, RoutedEventArgs e)
-        {
+        
+                
+        private void Button_Click_OK(object sender, RoutedEventArgs e) {
             DialogResult = true;
         }
 
-        private void Button_Click_Cancel(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click_Cancel(object sender, RoutedEventArgs e) {
             DialogResult = false;
+        }
+
+        private void upButtonPriority_Click(object sender, RoutedEventArgs e) {;
+            PriorityItem p = (PriorityItem)((Button)sender).DataContext;
+            int listIndex = Priorities.IndexOf(p);
+            if(listIndex > 0) {
+                Priorities.Move(listIndex, listIndex - 1);
+            }
+        }
+
+        private void downButtonPriority_Click(object sender, RoutedEventArgs e) {
+            PriorityItem p = (PriorityItem)((Button)sender).DataContext;
+            int listIndex = Priorities.IndexOf(p);
+            if (listIndex < Priorities.Count-1) {
+                Priorities.Move(listIndex, listIndex + 1);
+            }
         }
     }
 }

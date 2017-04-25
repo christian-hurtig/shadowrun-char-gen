@@ -11,19 +11,33 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ListView Name="listViewSelectPriorities" AllowDrop="True">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="index" DisplayMemberBinding="{Binding Index}"/>
-                    <GridViewColumn Header="something" DisplayMemberBinding="{Binding Text}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <Grid>
+            <ListView Margin="10" Name="listViewPriority">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Button Name="upButtonPriority" Click="upButtonPriority_Click">Up</Button>
+                            <Button Name="downButtonPriority" Click="downButtonPriority_Click">Down</Button>
+                            <TextBlock Name="textIndexPriority" Text="{Binding Index}" FontWeight="Bold" />
+                            <TextBlock Name="textTextPriority" Text="{Binding Text}" FontWeight="Bold" />
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ComboBox Name="comboBoxRace" >
+                <TextBlock Text="{Binding Name}"/>
+            </ComboBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button IsCancel="True" Click="Button_Click_Cancel">Cancel</Button>
             <Button IsDefault="True" Click="Button_Click_OK">OK</Button>
         </StackPanel>
