@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace shadowrun_char_gen
 {
-    class Attribute
+    public class Attribute
     {
-        public int Value { get; private set; }
-        public int Maximum { get; private set; }
+        int Value;
+        int Maximum;
 
         public Attribute(int maximum)
         {
@@ -23,6 +23,10 @@ namespace shadowrun_char_gen
 
         public int AugmentedMaximum() {
             return Maximum + 4;
+        }
+
+        public string getMinMaxString() {
+            return Value + "/" + Maximum;
         }
     }
 }

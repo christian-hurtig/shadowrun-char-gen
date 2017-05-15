@@ -45,6 +45,7 @@ namespace shadowrun_char_gen
             RaceList.Add(new Race("Troll", 10, 5, 6, 10, 6, 5, 5, 4, 6, 6, 6));
 
             listBoxRace.ItemsSource = RaceList;
+            listBoxRace.SelectedIndex = 0;
         }
 
         private void PrioritiesCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
@@ -97,8 +98,16 @@ namespace shadowrun_char_gen
             if(r == null) {
                 return;
             }
-            
-            //do stuff with list display.
+
+            textBody.Text = r.Body.getMinMaxString();
+            textAgility.Text = r.Agility.getMinMaxString();
+            textReaction.Text = r.Reaction.getMinMaxString();
+            textStrength.Text = r.Strength.getMinMaxString();
+
+            textWillpower.Text = r.Willpower.getMinMaxString();
+            textLogic.Text = r.Logic.getMinMaxString();
+            textIntuision.Text = r.Intuision.getMinMaxString();
+            textCharisma.Text = r.Charisma.getMinMaxString();
 
         }
     }

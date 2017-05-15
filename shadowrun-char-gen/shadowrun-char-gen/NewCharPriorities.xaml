@@ -37,9 +37,126 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <Label>
-                T
-            </Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="BOD" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textBody" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="AGI" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textAgility" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="REA" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textReaction" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="STR" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textStrength" Text="..."/>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="WIL" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textWillpower" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="LOG" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textLogic" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="1">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="INT" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textIntuision" Text="..."/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3" Grid.Row="1">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="CHA" FontWeight="Bold"/>
+                        <TextBlock Grid.Row="1" Name="textCharisma" Text="..."/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
         </Grid>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal">

@@ -7,32 +7,32 @@ using System.Threading.Tasks;
 namespace shadowrun_char_gen {
     public class Race {
         public string name;
-        Attribute BodyMax;
-        Attribute AgilityMax;
-        Attribute ReactionMax;
-        Attribute StrengthMax;
-        Attribute WillpowerMax;
-        Attribute LogicMax;
-        Attribute IntuisionMax;
-        Attribute CharismaMax;
-        Attribute EdgeMax;
-        Attribute MagicMax;
-        Attribute ResonanceMax;
+        public Attribute Body;
+        public Attribute Agility;
+        public Attribute Reaction;
+        public Attribute Strength;
+        public Attribute Willpower;
+        public Attribute Logic;
+        public Attribute Intuision;
+        public Attribute Charisma;
+        public Attribute Edge;
+        public Attribute Magic;
+        public Attribute Resonance;
 
         public Race(string name, int bodyMax, int agilityMax, int reactionMax, int strengthMax, int willpowerMax,
                     int logicMax, int intuitionMax, int charismaMax, int edgeMax, int magicMax, int resonanceMax) {
             this.name = name;
-            BodyMax = new Attribute(bodyMax);
-            AgilityMax = new Attribute(agilityMax);
-            ReactionMax = new Attribute(reactionMax);
-            StrengthMax = new Attribute(strengthMax);
-            WillpowerMax = new Attribute(willpowerMax);
-            LogicMax = new Attribute(logicMax);
-            IntuisionMax = new Attribute(intuitionMax);
-            CharismaMax = new Attribute(charismaMax);
-            EdgeMax = new Attribute(edgeMax);
-            MagicMax = new Attribute(magicMax);
-            ResonanceMax = new Attribute(resonanceMax);
+            Body = new Attribute(bodyMax);
+            Agility = new Attribute(agilityMax);
+            Reaction = new Attribute(reactionMax);
+            Strength = new Attribute(strengthMax);
+            Willpower = new Attribute(willpowerMax);
+            Logic = new Attribute(logicMax);
+            Intuision = new Attribute(intuitionMax);
+            Charisma = new Attribute(charismaMax);
+            Edge = new Attribute(edgeMax);
+            Magic = new Attribute(magicMax);
+            Resonance = new Attribute(resonanceMax);
         }
 
         public string Name {
