@@ -35,7 +35,7 @@ namespace shadowrun_char_gen
             Priorities.Add(new PriorityItem('D', "Skills"));
             Priorities.Add(new PriorityItem('E', "Resources"));
 
-            listViewPriority.ItemsSource = Priorities;
+            ItemsPriority.ItemsSource = Priorities;
             Priorities.CollectionChanged += PrioritiesCollectionChanged;
 
             RaceList.Add(new Race("Dwarf", 8, 6, 5, 8, 7, 6, 6, 6, 7, 6, 6));

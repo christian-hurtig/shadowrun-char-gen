@@ -18,18 +18,26 @@
         </Grid.RowDefinitions>
 
         <Grid>
-            <ListView Margin="10" Name="listViewPriority">
-                <ListView.ItemTemplate>
+            <ItemsControl Margin="10" Name="ItemsPriority">
+                <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel>
-                            <Button Name="upButtonPriority" Click="upButtonPriority_Click">Up</Button>
-                            <Button Name="downButtonPriority" Click="downButtonPriority_Click">Down</Button>
-                            <TextBlock Name="textIndexPriority" Text="{Binding Index, Mode=TwoWay}" FontWeight="Bold" />
-                            <TextBlock Name="textTextPriority" Text="{Binding Text}" FontWeight="Bold" />
+                            <StackPanel>
+                                <Button Name="upButtonPriority" Click="upButtonPriority_Click" Height="15" BorderThickness="0" 
+                                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Padding="0,0,0,1">
+                                    <Image Source="images\up_arrow.png"/>
+                                </Button>
+                                <Button Name="downButtonPriority" Click="downButtonPriority_Click" Height="15" BorderThickness="0" 
+                                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Padding="0">
+                                    <Image Source="images\down_arrow.png"/>
+                                </Button>
+                            </StackPanel>
+                            <TextBlock Name="textIndexPriority" Text="{Binding Index, Mode=TwoWay}" FontWeight="Bold" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Name="textTextPriority" Text="{Binding Text}" FontWeight="Bold" VerticalAlignment="Center" Margin="5"/>
                         </WrapPanel>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -159,9 +167,9 @@
             </Grid>
         </Grid>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <Button IsCancel="True" Click="Button_Click_Cancel">Cancel</Button>
-            <Button IsDefault="True" Click="Button_Click_OK">OK</Button>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+            <Button IsDefault="True" Click="Button_Click_OK" Width="50" Margin="4">OK</Button>
+            <Button IsCancel="True" Click="Button_Click_Cancel" Width="50" Margin="4">Cancel</Button>
         </StackPanel>
     </Grid>
 </Window>
