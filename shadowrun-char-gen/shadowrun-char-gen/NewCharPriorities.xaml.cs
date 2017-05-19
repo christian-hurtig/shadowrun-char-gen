@@ -51,13 +51,14 @@ namespace shadowrun_char_gen
         private void PrioritiesCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
             int i = 'A';
             
-                foreach (PriorityItem p in Priorities) { 
-                    p.Index = (char)i;
-                    i++;
-                }
+            foreach (PriorityItem p in Priorities) { 
+                p.Index = (char)i;
+                i++;
+            }
         }
         private void Button_Click_OK(object sender, RoutedEventArgs e) {
             DialogResult = true;
+
         }
 
         private void Button_Click_Cancel(object sender, RoutedEventArgs e) {

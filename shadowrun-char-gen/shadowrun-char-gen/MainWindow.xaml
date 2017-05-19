@@ -24,7 +24,20 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="291" Grid.Row="1" VerticalAlignment="Top" Width="492">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <TextBlock>                            
+                        This is
+                    </TextBlock>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
 
-        <TextBlock Name="textBlockReturnValue" Grid.Row="1">Info goes here</TextBlock>
     </Grid>
 </Window>
